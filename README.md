@@ -8,9 +8,9 @@ In this project, I have trained various neural networks for classifying images. 
 
 ### Data Normalization:
 When the range of the data varies training might get harder while to update the weights. It is best to scale all the inputs to lie in in the range of 0 to 1. There are different ways to normalize data few of them are as follows:
-1. Dividing all the data by the maximum possible value, this scale the data from 0 to 1.
-2. d-min/(max-min) is another way to normalize the data that lies in the range of 0 to 1.
-3. Most commonly used data normalization is to calculate the mean and standard deviation of the data. Subtract the mean and divide the value by the standard deviation to make      the data have a normal distribution with mean 0 and standard deviation 1.
+1. Dividing all the data by the maximum possible value, this scales the data in the rnage of 0 to 1.
+2. Subtracting minimun value and diving the diffrence of maximum and minimum from data(d-min/(max-min)) is another way to normalize the data that lies in the range of 0 to 1.
+3. Most commonly used data normalization is to calculate the mean and standard deviation of the data. Subtract the mean and divide the value by the standard deviation ((d- mean)/std) to make the data have a normal distribution with mean 0 and standard deviation 1.
 
 # Different ways to control overfitting
 Overfiting occurs when a network fits the training set with a very high accuracy but cannot be generalized on test or validation sets. One of the reason for a network to overfit is that the network is so big and hence the number of parameters to be learned are a lot more than data available. But smaller networks are not very good at learning most of the datasets. Following regularization techniques can be used to overcome the problem of overfitting
@@ -52,9 +52,14 @@ This is a real-world dataset of house numbers from google street view images. Th
 This dataset consists of coloured images of 10 different classes. Each image has 3 channels (R,G,B) and 32x32 pixels.
 
 ## Network Architectures:
-### Lenet
-### Vgg
-### nin
+### LENET
+LENET is one of the first CNN's that were introduced. It is a simple neural network with 2 convolutional layers, downsampling and follwed by 1 densely connected layers and output layer. 
+http://yann.lecun.com/exdb/publis/pdf/lecun-90c.pdf
+### VGG
+VGG is a very deep neural network that was implemented for ImageNet. It is deep neural network with kernel size as 3x3 as opposed to the larger kernel sizes of 5x5, 7x7. The authors of the papers showed that large kernel sizes are not necessary for training. Using 3x3 kernel size also reduces the number of parameters to be trained by a good factor. https://arxiv.org/abs/1409.1556
+### NiN
+In NiN more non-linearity is introduced using mpl convolutions layer(convolution layer with 1x1 kernel) and Global Average pooling instead of a dense layer. The authors of the paper showed that the non-linaerity and global averaging prevents overfitting globally.
+https://arxiv.org/abs/1312.4400
  
 
 
