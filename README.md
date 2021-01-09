@@ -16,11 +16,11 @@ Most commonly used data normalization is to calculate the mean and standard devi
 
 Usually, networks tend to overfit. One of the reason for a network to overfit is that the network is so big and hence the number of parameters to be learned are a lot more than data available. But smaller networks are not very good at learning most of the datasets. Following regularization techniques can be used to overcome the problem of overfitting
 
-# Regularization:
+## Regularization:
 When a network is overfitting the weights have a high magnitude in order to fit all the training data perfectly but it cannot be generalized. Regularization penalizes the weights and hence prevents the weights from blowing up.
-# Data Augmentation:
+## Data Augmentation:
 Large and deep neural networks are useful to learn most of the features but if the data available is less, the network will overfit. This can be overcome by generating data in real-time. New data is generated from the existing by applying various operations such as rotation, cropping,  flipping, and scaling.
-# Dropout
+## Dropout
 During training, some of the nodes are ignored. This results in the training of different networks on the same dataset without increasing the number of parameters to be trained.
  
   
