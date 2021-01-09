@@ -1,25 +1,23 @@
 # Image-Classification
 
 
-
 ## Introduction: 
+In the world of Machine Learning, Neural Networks have been successful to achieve state-of-art accuracy in multiple domains like image classification, voice recognition, autonomous driving and so on. In this project, I focus on training various neural network models for classifying images. The Datasets that were used are MNIST, FMNIST, CIFAR 10, and SVHN. Studied Various regularization techniques their effect while training. During the training phase, there are mulitple parameters which influence the validation accuracy. The algorithmic community is coming out with different optimization strategies to reduce the validation loss. My goal is to study the most recently used optimization strategies and observe their influence over the accuracy of the network.
 
-In this project, I have trained various neural networks for classifying images. The Datasets that were used are MNIST, FMNIST, CIFAR 10, and SVHN. Studied Various regularization techniques their effect while training. 
-
-### Data Normalization:
-When the range of the data varies training might get harder while to update the weights. It is best to scale all the inputs to lie in in the range of 0 to 1. There are different ways to normalize data few of them are as follows:
-1. Dividing all the data by the maximum possible value, this scales the data in the rnage of 0 to 1.
-2. Subtracting minimun value and diving the diffrence of maximum and minimum from data(d-min/(max-min)) is another way to normalize the data that lies in the range of 0 to 1.
+## Data Normalization:
+When the range of the data varies, training might get harder while updating the weights in the backpropagation stage. It is best to scale all the inputs to lie in in the range of 0 to 1 so that we have smaller values of weights. There are different ways to normalize the data and few of them are as follows:
+1. Dividing all the data points in the input by the maximum possible value, this scales the data in the range of 0 to 1.
+2. Subtracting minimum value and dividing the diffrence of maximum and minimum from data(d-min/(max-min)) is another way to normalize the data that lies in the range of 0 to 1.
 3. Most commonly used data normalization is to calculate the mean and standard deviation of the data. Subtract the mean and divide the value by the standard deviation ((d- mean)/std) to make the data have a normal distribution with mean 0 and standard deviation 1.
 
-# Different ways to control overfitting
-Overfiting occurs when a network fits the training set with a very high accuracy but cannot be generalized on test or validation sets. One of the reason for a network to overfit is that the network is so big and hence the number of parameters to be learned are a lot more than data available. But smaller networks are not very good at learning most of the datasets. Following regularization techniques can be used to overcome the problem of overfitting
+## Different ways to control overfitting
+Overfiting occurs when a network fits the training set with a very high accuracy i.e it gets over trained only for the training datasets but cannot be generalized on test or validation sets. One of the reason for a network to overfit in a deeper network is when the number of parameters to be learned are a lot more than data available. On the other hand, when we reduce the network size, there is a high impact on the performance since all the features cannot be learnt. Therefore, there is a need to find a balance of having a deeper network but preventing overfitting. Following regularization techniques can be used to overcome the problem of overfitting
 
-## Regularization:
-When a network is overfitting the weights have a high magnitude in order to fit all the training data perfectly but it cannot be generalized. Regularization penalizes the weights and hence prevents the weights from blowing up.
-## Data Augmentation:
-Large and deep neural networks are useful to learn most of the features but if the data available is less, the network will overfit. This can be overcome by generating data in real-time. New data is generated from the existing by applying various operations such as rotation, cropping,  flipping, and scaling.
-## Dropout
+### Regularization:
+When a network is overfitting, the weights have a high magnitude in order to fit all the training data perfectly. Regularization penalizes the weights by a factor and prevents overfitting.
+### Data Augmentation:
+Huge amount of data is required to train to design a good model. But, often the data available in the dataset is not enough to support a bigger network without overfitting. Data Augmentation solves this problem by generating more data from the given data in real-time. This is done by applying various operations such as rotation, cropping,  flipping, and scaling.
+### Dropout
 During training, some of the nodes are ignored. This results in the training of different networks on the same dataset without increasing the number of parameters to be trained.
  
   
@@ -53,15 +51,18 @@ This dataset consists of coloured images of 10 different classes. Each image has
 
 ## Network Architectures:
 ### LENET
-LENET is one of the first CNN's that were introduced. It is a simple neural network with 2 convolutional layers, downsampling and follwed by 1 densely connected layers and output layer. 
-http://yann.lecun.com/exdb/publis/pdf/lecun-90c.pdf
-### VGG
-VGG is a very deep neural network that was implemented for ImageNet. It is deep neural network with kernel size as 3x3 as opposed to the larger kernel sizes of 5x5, 7x7. The authors of the papers showed that large kernel sizes are not necessary for training. Using 3x3 kernel size also reduces the number of parameters to be trained by a good factor. https://arxiv.org/abs/1409.1556
-### NiN
-In NiN more non-linearity is introduced using mpl convolutions layer(convolution layer with 1x1 kernel) and Global Average pooling instead of a dense layer. The authors of the paper showed that the non-linaerity and global averaging prevents overfitting globally.
-https://arxiv.org/abs/1312.4400
- 
+LENET is one of the first CNN's that were introduced. It is a simple neural network with 2 convolutional layers, downsampling and follwed by 1 densely connected layers and output layer [1]
 
+### VGG
+VGG is a very deep neural network that was implemented for ImageNet. It is deep neural network with kernel size as 3x3 as opposed to the larger kernel sizes of 5x5, 7x7. The authors of the papers showed that large kernel sizes are not necessary for training. Using 3x3 kernel size also reduces the number of parameters to be trained by a good factor [2]. 
+### NiN
+In NiN more non-linearity is introduced using mpl convolutions layer(convolution layer with 1x1 kernel) and Global Average pooling instead of a dense layer. The authors of the paper showed that the non-linaerity and global averaging prevents overfitting globally [3].
+
+ 
+## References
+1. http://yann.lecun.com/exdb/publis/pdf/lecun-90c.pdf
+2. https://arxiv.org/abs/1409.1556
+3. https://arxiv.org/abs/1312.4400
 
 
 
