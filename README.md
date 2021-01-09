@@ -41,28 +41,35 @@ Training and testing loss over epochs when L2 Regularization, Dropout and Data A
 
 ## Datasets:
 ### MNIST:
-This dataset contains Handwritten digits from (0 to 9), 60,000 images are available for training and 10,000 for testing. Images are black white and contain 28x28 pixels which has a value of its intensity.
-### FMNIST:
+This dataset contains Handwritten digits from (0 to 9), 60,000 images are available for training and 10,000 for testing. Images are black white and contain 28x28 pixels which has a value of its intensity. 
+### Fashion MNIST:
 This dataset contains images of 10 different kinds of clothing. These images also are black white and have a single channel of 28x28 pixels.
 ### SVHN:
-This is a real-world dataset of house numbers from google street view images. There are 10 classes for each digit. There is a lot of noise in these images and cropped to fit in a single digit of 32 x32 pixels. Unlike MNISt dataset this has 3 channels for each image representing the intensity of each primary colour(R, G, B).
+This is a real-world dataset of house numbers from google street view images. There are 10 classes for each digit. There is a lot of noise in these images and cropped to fit in a single digit of 32 x32 pixels. Unlike MNISt dataset this has 3 channels for each image representing the intensity of each primary colour(R, G, B).[1]
 ### CIFAR 10:
 This dataset consists of coloured images of 10 different classes. Each image has 3 channels (R,G,B) and 32x32 pixels.
 
 ## Network Architectures:
 ### LENET
-LENET is one of the first CNN's that were introduced. It is a simple neural network with 2 convolutional layers, downsampling and follwed by 1 densely connected layers and output layer [1]
+LENET is one of the first CNN's that were introduced. It is a simple neural network with 2 convolutional layers, downsampling and follwed by 1 densely connected layers and output layer [2]
 
 ### VGG
-VGG is a very deep neural network that was implemented for ImageNet. It is deep neural network with kernel size as 3x3 as opposed to the larger kernel sizes of 5x5, 7x7. The authors of the papers showed that large kernel sizes are not necessary for training. Using 3x3 kernel size also reduces the number of parameters to be trained by a good factor [2]. 
+VGG is a very deep neural network that was implemented for ImageNet. It is deep neural network with kernel size as 3x3 as opposed to the larger kernel sizes of 5x5, 7x7. The authors of the papers showed that large kernel sizes are not necessary for training. Using 3x3 kernel size also reduces the number of parameters to be trained by a good factor [3]. 
 ### NiN
-In NiN more non-linearity is introduced using mpl convolutions layer(convolution layer with 1x1 kernel) and Global Average pooling instead of a dense layer. The authors of the paper showed that the non-linaerity and global averaging prevents overfitting globally [3].
+In NiN more non-linearity is introduced using mpl convolutions layer(convolution layer with 1x1 kernel) and Global Average pooling instead of a dense layer. The authors of the paper showed that the non-linaerity and global averaging prevents overfitting globally [4].
+
+## Results
+
+1. MNIST: With two hidden dense layers 98.35% test accuracy. LENET with 5x5 as kernel size 99.61% and 3x3 as kerne size 99.3%.
+2. Fashion_MNIST:  LENET with 5x5 as kernel size 93.65% and 3x3 as kernel size it is 92.79%.
+3. SVHN:  LENET with 5x5 as kernel size accuracy is 93.97% and with 3x3 as kernel size it is 93.85. With NiN the accuracy 95.25% is with VGG11 96.06% it is and with VGG13 it is 96.76%. 
+4. CIFAR10: LENET with 5x5 as kernel size accuracy is 82.72%. With NiN the accuracy is 88.68% with VGG11 it is 82.56% and with VGG13 it is 86.29%.
 
  
 ## References
-1. http://yann.lecun.com/exdb/publis/pdf/lecun-90c.pdf
-2. https://arxiv.org/abs/1409.1556
-3. https://arxiv.org/abs/1312.4400
-
+1. http://ufldl.stanford.edu/housenumbers
+2. http://yann.lecun.com/exdb/publis/pdf/lecun-90c.pdf
+3. https://arxiv.org/abs/1409.1556
+4. https://arxiv.org/abs/1312.4400
 
 
