@@ -16,8 +16,8 @@ epochs        = 150
 iterations    = 391
 num_classes   = 10
 dropout       = 0.5
-wd  = 0.00001
-log_filepath  = './nin'
+wd            = 0.00001
+
 
 
     
@@ -40,8 +40,7 @@ def build_model():
   model.add(Activation('relu'))
   model.add(Conv2D(96, (1, 1), padding='same', use_bias=True,kernel_initializer='glorot_uniform', kernel_regularizer=keras.regularizers.l2(wd)))
   model.add(Activation('relu'))
-  model.add(MaxPooling2D(pool_size=(3,3),strides=(2,2),padding = 'same'))
-  
+  model.add(MaxPooling2D(pool_size=(3,3),strides=(2,2),padding = 'same'))  
   model.add(Dropout(dropout))
   
   model.add(Conv2D(192, (5,5), padding='same', use_bias=True,kernel_initializer='glorot_uniform', kernel_regularizer=keras.regularizers.l2(wd)))
@@ -51,8 +50,7 @@ def build_model():
   model.add(Activation('relu'))
   model.add(Conv2D(192, (1, 1),padding='same', use_bias=True, kernel_initializer='glorot_uniform', kernel_regularizer=keras.regularizers.l2(wd)))
   model.add(Activation('relu'))
-  model.add(MaxPooling2D(pool_size=(3,3),strides=(2,2),padding = 'same'))
-  
+  model.add(MaxPooling2D(pool_size=(3,3),strides=(2,2),padding = 'same'))  
   model.add(Dropout(dropout))
   
   model.add(Conv2D(192, (5,5), padding='same',use_bias=True, kernel_initializer='glorot_uniform', kernel_regularizer=keras.regularizers.l2(wd)))
