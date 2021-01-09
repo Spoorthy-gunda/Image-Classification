@@ -10,23 +10,23 @@ import matplotlib.pyplot as plt
 from keras.preprocessing.image import ImageDataGenerator
 
 
-weight_decay=0.0001
+wd=0.0001
 batch_size=120
 iterations=417
 epochs=100
 
 def build_model():
   model= Sequential()
-  model.add(Conv2D(32,(5,5),padding='same',use_bias=True,kernel_initializer='glorot_uniform',activation='relu',input_shape=(32,32,3),kernel_regularizer=keras.regularizers.l2(weight_decay)))
+  model.add(Conv2D(32,(5,5),padding='same',use_bias=True,kernel_initializer='glorot_uniform',activation='relu',input_shape=(32,32,3),kernel_regularizer=keras.regularizers.l2(wd)))
   model.add(Dropout(0.4))
   model.add(MaxPooling2D((2,2),strides=(2,2)))
-  model.add(Conv2D(64,(5,5),padding='same',use_bias=True,kernel_initializer='glorot_uniform',activation='relu',kernel_regularizer=keras.regularizers.l2(weight_decay)))
+  model.add(Conv2D(64,(5,5),padding='same',use_bias=True,kernel_initializer='glorot_uniform',activation='relu',kernel_regularizer=keras.regularizers.l2(wd)))
   model.add(Dropout(0.4))
   model.add(MaxPooling2D((2,2),strides=(2,2)))
   model.add(Flatten())
-  model.add(Dense(1000,kernel_initializer='glorot_uniform',use_bias=True, activation='relu',kernel_regularizer=keras.regularizers.l2(weight_decay)))
+  model.add(Dense(1000,kernel_initializer='glorot_uniform',use_bias=True, activation='relu',kernel_regularizer=keras.regularizers.l2(wd)))
   model.add(Dropout(0.4))  
-  model.add(Dense(10,kernel_initializer='glorot_uniform',use_bias=True,activation='softmax',kernel_regularizer=keras.regularizers.l2(weight_decay)))
+  model.add(Dense(10,kernel_initializer='glorot_uniform',use_bias=True,activation='softmax',kernel_regularizer=keras.regularizers.l2(wd)))
   opt = optimizers.Adam(lr=.001)
   model.compile(loss='categorical_crossentropy', optimizer=opt, metrics=['accuracy'])
   return model
