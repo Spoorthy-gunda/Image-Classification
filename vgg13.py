@@ -36,7 +36,7 @@ def build_model():
   model= Sequential()
 
   model.add(Conv2D(64,(3,3),padding='same',use_bias=True,kernel_initializer='glorot_uniform',activation='relu',input_shape=(32,32,3),kernel_regularizer=keras.regularizers.l2(wd)))
-  # model.add(Conv2D(64,(3,3),padding='same',use_bias=True,kernel_initializer='glorot_uniform',activation='relu',kernel_regularizer=keras.regularizers.l2(w)))
+  # model.add(Conv2D(64,(3,3),padding='same',use_bias=True,kernel_initializer='glorot_uniform',activation='relu',kernel_regularizer=keras.regularizers.l2(wd)))
   model.add(MaxPooling2D((2,2),strides=(2,2)))
   model.add(BatchNormalization())
   model.add(Dropout(dropout))
