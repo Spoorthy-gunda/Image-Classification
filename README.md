@@ -24,6 +24,7 @@ Large and deep neural networks are useful to learn most of the features but if t
 During training, some of the nodes are ignored. This results in the training of different networks on the same dataset without increasing the number of parameters to be trained.
  
   
+![without_reg](https://user-images.githubusercontent.com/77033276/104082311-08fe1b00-51ea-11eb-9909-8a252ea1e9ef.PNG)
 	
 Training and testing loss over epochs when no regularization is applied.
 
